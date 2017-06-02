@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPECTROLL</title>
+  <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body class="body">
+  <header class="header">
+    <div class="header__wrapper">
+      <nav class="header__menu-col">
+        <button class="menu-button" type="button"></button>
+        <ul class="menu">
+          <li class="menu-item"><a class="menu-link" href="#">Антигравийная</a></li>
+          <li class="menu-item"><a class="menu-link" href="#">Тонировочная</a></li>
+          <li class="menu-item"><a class="menu-link" href="#">Архитектурная</a></li>
+          <li class="menu-item"><a class="menu-link" href="#">Прайс</a></li>
+          <li class="menu-item"><a class="menu-link" href="#">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="header__callback-col">
+        <a class="callback-phone" href="+78001000383">8 800 1000 383</a>
+        <button class="callback-button" type="button" onclick="showOverlayCallback()">Обратный звонок</button>
+      </div>
+      <div class="header__logo-col">
+        <img class="logo" width="85px" height="41px" src="img/pics/spectroll-logo.svg">
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="carousel-section">
+      <div class="carousel slide" id="carousel-example-generic" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li class="carousel-indicator active" data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li class="carousel-indicator" data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li class="carousel-indicator" data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <picture>
+              <source media="(min-width: 1281px)" srcset="img/backgrounds/main-wallpapers-1920.png">
+              <source media="(min-width: 769px)" srcset="img/backgrounds/main-wallpapers-1280.png">
+              <source media="(min-width: 321px)" srcset="img/backgrounds/main-wallpapers-768.png">
+              <img src="img/backgrounds/main-wallpapers-320.png" alt="">
+            </picture>
+          </div>
+          <div class="item">
+            <picture>
+              <source media="(min-width: 1281px)" srcset="img/backgrounds/main-wallpapers-1920.png">
+              <source media="(min-width: 769px)" srcset="img/backgrounds/main-wallpapers-1280.png">
+              <source media="(min-width: 321px)" srcset="img/backgrounds/main-wallpapers-768.png">
+              <img src="img/backgrounds/main-wallpapers-320.png" alt="">
+            </picture>
+          </div>
+          <div class="item">
+            <picture>
+              <source media="(min-width: 1281px)" srcset="img/backgrounds/main-wallpapers-1920.png">
+              <source media="(min-width: 769px)" srcset="img/backgrounds/main-wallpapers-1280.png">
+              <source media="(min-width: 321px)" srcset="img/backgrounds/main-wallpapers-768.png">
+              <img src="img/backgrounds/main-wallpapers-320.png" alt="">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="callback-mobile">
+        <a class="callback-phone" href="+78001000383">8 800 1000 383</a>
+        <button class="callback-button" type="button" onclick="showOverlayCallback()">Обратный звонок</button>
+    </section>
+    <section class="features">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-lg-3 features--discount">
+              Скидка 10%<br>На первый заказ
+              <button class="features--discount__more" type="button" onclick="showOverlayInfoDiscount()">Подробнее</button>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-lg-3 features--movie">
+                ССЫЛКА НА ВИДЕО НА<br>КАНАЛЕ YOU TUBE<br>(КАРТИНКА НУЖНА)
+            </div>
+            <div class="col-xs-12 col-sm-6 col-lg-3 features--buy">
+                Купить<br>в интернет-магазине
+                <a class="features--buy__more" href="http://filmsmart.ru/">Filmsmart.ru</a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-lg-3 features--delivery">
+              Доставка<br>в течение суток
+              <button class="features--delivery__more" type="button">Подробнее</button>
+            </div>
+          </div>
+        </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <p class="footer__requisites col-xs-12 col-sm-6 col-lg-3">
+          © 2017 Spectroll<br>ООО&nbsp;«Солтекс», ИНН&nbsp;5402550532, КПП&nbsp;540201001, ОГРН&nbsp;1125476072468
+        </p>
+        <p class="footer__address col-xs-12 col-sm-6 col-lg-3">
+          115432, Москва, пр-т Андропова, 18, корп.5, оф.959
+        </p>
+        <div class="footer__developers col-xs-12 col-sm-12 col-lg-6 clearfix">
+          <address class="footer__developers-inner">
+            Разработка сайта —
+            <a class="footer__developers-link text-hidden" href="https://constructivesolutions.ru/">Конструктивные решения</a>
+          </address>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="overlay--info--discount" hidden>
+    <article class="popup--info">
+      <h2 class="popup--info__title">Скидка&nbsp;10% на&nbsp;первый&nbsp;заказ</h2>
+      <p class="popup--info__text">Всё, что вам нужно сделать – это связаться с нашим менеджером любым удобным способом:</p>
+      <a class="popup--info__phone" href="+78001000383">8 800 1000 383</a>
+      <a class="popup--info__email" href="mailto:info@spectroll.ru">info@spectroll.ru</a>
+      <a class="popup--info__site" href="http://spectroll.ru/">spectroll.ru</a>
+    </article>
+    <button class="popup-close text-hidden" type="button">Закрыть</button>
+  </div>
+  <div class="overlay--callback" hidden>
+    <form class="popup--callback clearfix">
+      <h2 class="popup--callback__title">Мы вам перезвоним</h2>
+      <div class="popup--callback__inner">
+        <input class="popup--callback__input" type="text" placeholder="Имя">
+        <input class="popup--callback__input-email" type="email" placeholder="Email">
+        <input class="popup--callback__input" type="tel" placeholder="Телефон">
+        <button class="popup--callback__button" type="submit">Отправить</button>
+      </div>
+      <button class="popup__comment-button" type="button">Добавить комментарий</button>
+    </form>
+    <button class="popup-close text-hidden" type="button">Закрыть</button>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="vendor/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+</html>

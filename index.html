@@ -1,71 +1,47 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" ng-app="Spectroll-app">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SPECTROLL</title>
   <link rel="stylesheet" href="css/main.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script type="text/javascript" src="vendor/angular.min.js"></script>
+  <script type="text/javascript" src="vendor/angular-route.min.js"></script>
 </head>
 <body class="body">
   <header class="header">
     <div class="header__wrapper">
       <nav class="header__menu-col">
-        <button class="menu-button" type="button"></button>
-        <ul class="menu">
-          <li class="menu-item"><a class="menu-link" href="#">Антигравийная</a></li>
-          <li class="menu-item"><a class="menu-link" href="#">Тонировочная</a></li>
-          <li class="menu-item"><a class="menu-link" href="#">Архитектурная</a></li>
-          <li class="menu-item"><a class="menu-link" href="#">Прайс</a></li>
-          <li class="menu-item"><a class="menu-link" href="#">Контакты</a></li>
-        </ul>
+        <button class="menu-button" type="button" onclick="showMenu()"></button>
+        <div class="menu-wrapper">
+          <div class="menu-overlay"></div>
+          <button class="menu-close" type="button" onclick="hideMenu()"></button>
+          <ul class="menu">
+            <li class="menu-item__main"><a class="menu-link" ng-href="/#/" onclick="hideMenu()">Главная</a></li>
+            <li class="menu-item"><a class="menu-link" ng-href="/#/shockproof" onclick="hideMenu()">Антигравийная</a></li>
+            <li class="menu-item"><a class="menu-link" ng-href="/#/tinting" onclick="hideMenu()">Тонировочная</a></li>
+            <li class="menu-item"><a class="menu-link" ng-href="/#/architecture" onclick="hideMenu()">Архитектурная</a></li>
+            <li class="menu-item"><a class="menu-link" ng-href="/#/" onclick="hideMenu()">Прайс</a></li>
+            <li class="menu-item"><a class="menu-link" ng-href="/#/" onclick="hideMenu()">Контакты</a></li>
+          </ul>
+          <section class="menu-callback-mobile">
+            <a class="callback-phone" href="+78001000383">8 800 1000 383</a>
+            <button class="callback-button" type="button" onclick="showOverlayCallback()">Обратный звонок</button>
+          </section>
+        </div>
       </nav>
       <div class="header__callback-col">
         <a class="callback-phone" href="+78001000383">8 800 1000 383</a>
         <button class="callback-button" type="button" onclick="showOverlayCallback()">Обратный звонок</button>
       </div>
       <div class="header__logo-col">
-        <img class="logo" width="85px" height="41px" src="img/pics/spectroll-logo.svg">
+        <a ng-href="/#/"><img class="logo" width="85px" height="41px" src="img/pics/spectroll-logo.svg"></a>
       </div>
     </div>
   </header>
   <main class="main">
-    <section class="carousel-section">
-      <div class="carousel slide" id="carousel-example-generic" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li class="carousel-indicator active" data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li class="carousel-indicator" data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li class="carousel-indicator" data-target="#carousel-example-generic" data-slide-to="2"></li>
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <picture>
-              <source media="(min-width: 1281px)" srcset="img/backgrounds/main-wallpapers-1920.png">
-              <source media="(min-width: 769px)" srcset="img/backgrounds/main-wallpapers-1280.png">
-              <source media="(min-width: 321px)" srcset="img/backgrounds/main-wallpapers-768.png">
-              <img class="carousel-img" src="img/backgrounds/main-wallpapers-1920.png" alt="">
-            </picture>
-          </div>
-          <div class="item">
-            <picture>
-              <source media="(min-width: 1281px)" srcset="img/backgrounds/main-wallpapers-1920.png">
-              <source media="(min-width: 769px)" srcset="img/backgrounds/main-wallpapers-1280.png">
-              <source media="(min-width: 321px)" srcset="img/backgrounds/main-wallpapers-768.png">
-              <img class="carousel-img" src="img/backgrounds/main-wallpapers-1920.png" alt="">
-            </picture>
-          </div>
-          <div class="item">
-            <picture>
-              <source media="(min-width: 1281px)" srcset="img/backgrounds/main-wallpapers-1920.png">
-              <source media="(min-width: 769px)" srcset="img/backgrounds/main-wallpapers-1280.png">
-              <source media="(min-width: 321px)" srcset="img/backgrounds/main-wallpapers-768.png">
-              <img class="carousel-img" src="img/backgrounds/main-wallpapers-1920.png" alt="">
-            </picture>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div ng-view></div>
     <section class="callback-mobile">
         <a class="callback-phone" href="+78001000383">8 800 1000 383</a>
         <button class="callback-button" type="button" onclick="showOverlayCallback()">Обратный звонок</button>
@@ -93,6 +69,11 @@
     </section>
   </main>
   <footer class="footer">
+    <article class="social">
+      <a class="social-item--vk" href></a>
+      <a class="social-item--insta" href></a>
+      <a class="social-item--fb" href></a>
+    </article>
     <div class="container-fluid">
       <div class="row">
         <p class="footer__requisites col-xs-12 col-sm-6 col-lg-3">
@@ -133,8 +114,9 @@
     </form>
     <button class="popup-close text-hidden" type="button">Закрыть</button>
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="vendor/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
   <script src="js/main.min.js"></script>
+  <script src="js/app.js"></script>
+  <div class="responsive responsive_below-1200px"></div>
 </body>
 </html>
